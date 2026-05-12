@@ -1,0 +1,274 @@
+You are designing a high-fidelity UI prototype for a single section of a 
+larger platform: the "Training & AI" module of a job-insertion platform 
+aimed at recent high school graduates from vulnerable neighborhoods in 
+Latin America. This is NOT the full platform — only this module.
+
+---
+
+## CONTEXT & PHILOSOPHY
+
+The platform bridges employment and education. When a candidate applies 
+for a job but lacks certain skills, they enter a training process before 
+being able to officially apply. This module handles that entire training 
+journey.
+
+Target users:
+- CANDIDATE (postulante): A young person (17–22 years old) from a 
+  vulnerable area. May have low confidence. Needs clarity, motivation, 
+  and simplicity.
+- TUTOR: A human mentor who monitors candidates, receives alerts, and 
+  can intervene when needed.
+
+Design philosophy:
+- Desktop-first web layout (minimum 1280px wide reference frame)
+- Two-panel or three-column layouts where appropriate
+- Warm, motivational, never punitive tone
+- Progress must ALWAYS be visible
+- Simple language, no technical jargon in UI labels
+- Feels modern and approachable, NOT corporate or bureaucratic
+- Think Duolingo meets LinkedIn Learning, but warmer
+- Make full use of horizontal space — avoid single-column stacked 
+  layouts that look like a stretched mobile screen
+
+---
+
+## DESIGN SYSTEM
+
+Color palette:
+- Primary: Indigo / deep blue (#4F46E5 or similar) — trust, education
+- Accent: Amber / warm orange (#F59E0B or similar) — energy, action
+- Success: Emerald green (#10B981)
+- Neutral backgrounds: Zinc/slate scale (white, #F8FAFC, #F1F5F9)
+- Text: Near-black (#1E293B), medium gray (#64748B)
+
+Typography:
+- Modern sans-serif (Inter or similar)
+- Clear hierarchy: large bold headings, readable body text
+- Avoid all-caps except for labels/tags
+
+Components:
+- Rounded corners (12–16px radius) throughout
+- Soft shadows, not harsh borders
+- Cards as the primary layout unit
+- Progress bars and circular progress rings
+- Status badges: Pending (gray), In Progress (blue), Completed (green), 
+  Needs Attention (amber)
+- Avatar placeholders for tutor presence
+- Persistent left sidebar navigation for all views
+- Top topbar with user info, notifications icon, and avatar
+
+---
+
+## GLOBAL LAYOUT
+
+Every screen shares the same shell:
+- LEFT SIDEBAR (fixed, ~240px wide): logo area at top, navigation links, 
+  tutor presence card at the bottom for the candidate side
+- TOP BAR (fixed, full width): page title on the left, notification bell 
+  + user avatar on the right
+- MAIN CONTENT AREA: fills the remaining space, scrollable
+
+The sidebar for CANDIDATES contains:
+  Home | My Plan | Training | Progress | My Tutor
+
+The sidebar for TUTORS contains:
+  My Candidates | Alerts | Reports
+
+---
+
+## SCREENS TO DESIGN
+
+Design ALL of the following screens within the global layout shell 
+described above.
+
+---
+
+### SCREEN 1 — CANDIDATE DASHBOARD (Home)
+The first thing the candidate sees after logging in.
+
+Layout: use a multi-column grid to fill horizontal space.
+
+Must include:
+- A wide welcome banner across the top of the content area with the 
+  candidate's name and the job offer they applied to 
+  (e.g., "Welcome back, Lucía — Training for: Junior Administrative 
+  Assistant at Empresa X")
+- Left column: a prominent OVERALL PROGRESS card with a circular ring 
+  indicator (e.g., "47% complete") and a motivational subtitle 
+  ("You're halfway there!")
+- Center/right column: "Skill Gap" summary card showing which skills 
+  were missing vs already covered, using colored tags or a 
+  checklist-style layout
+- A "Continue Training" CTA button — prominent, leads to current module
+- Bottom row: "Your Tutor" card (tutor name, photo placeholder, status 
+  indicator, "Send message" button) alongside a "Recent Activity" 
+  mini-feed
+
+---
+
+### SCREEN 2 — TRAINING PLAN (My Plan)
+A structured view of the full training path.
+
+Layout: two columns — module list on the left (~40%), module detail 
+preview on the right (~60%) when a module is selected.
+
+Must include:
+- Left panel: vertical step-by-step list of all training modules. Each 
+  item shows module title, estimated duration, and status badge 
+  (Completed / In Progress / Locked). Completed modules are ticked off, 
+  locked ones are dimmed with a lock icon, current one is highlighted.
+- Right panel: when a module is selected or hovered, show an expanded 
+  detail card with module description, list of skills it covers, 
+  estimated duration, and a "Start" or "Continue" CTA button.
+- Top of content area: overall estimated completion time and a 
+  horizontal progress bar spanning the full width
+- Optional XP or point counter as a gamification hint
+
+---
+
+### SCREEN 3 — MODULE VIEW (AI Training Space)
+The core training screen. IMPORTANT: The AI-generated content is a 
+backend feature that cannot be prototyped. Design a beautiful, clear 
+placeholder that communicates the intent.
+
+Layout: centered single-column content area with max-width (~760px) 
+centered in the main panel, to ensure readability. Sidebar remains 
+visible.
+
+Must include:
+- Module title and a horizontal step progress bar at the top 
+  (e.g., "Module 1: Excel Basics — Step 2 of 5")
+- A large, clearly defined CONTENT AREA taking up most of the vertical 
+  space. Style it as a modern lesson card or chat-style interface. 
+  Inside, add a non-intrusive placeholder: light gray italic text or a 
+  dashed border with the label "AI-generated training content will 
+  appear here". The area should feel intentional, not empty.
+- Below the content area: two action buttons side by side — 
+  "I understood, continue" (primary, right-aligned) and 
+  "I need help" (secondary, left-aligned)
+- A fixed bottom bar or sticky footer with back/forward navigation 
+  arrows and a "Ask your tutor" shortcut button
+- Clean, distraction-free feel — minimal chrome around the content area
+
+---
+
+### SCREEN 4 — EVALUATION / CHECKPOINT
+Shown after completing a module.
+
+Layout: centered content area (~800px max-width), clean and focused.
+
+Must include:
+- A clear header: "Module Checkpoint" with the module name as subtitle
+- 3–4 placeholder multiple choice questions with realistic dummy content 
+  (e.g., "Which Excel function is used to sum a range of cells?")
+- Each question is a card with 4 answer options displayed in a 2x2 grid. 
+  Selected state shows a highlighted border and background fill.
+- A sticky bottom bar with "Submit answers" CTA and an 
+  "I'm not ready yet" secondary link
+- POST-SUBMISSION STATE: replace the questions with a results card 
+  showing score (e.g., "3/4 correct"), a pass/fail indicator with 
+  color coding, a motivational message if passed ("Great job! Moving to 
+  Module 2"), and a "Retry" button if failed
+
+---
+
+### SCREEN 5 — PROGRESS & ACHIEVEMENTS
+A motivational tracker screen.
+
+Layout: three-column grid for the main content area.
+
+Must include:
+- Top: a wide stats bar across the full content area — 
+  Total time trained | Modules completed | Evaluations passed
+- Left column: a visual timeline or progress map of all modules with 
+  their completion status, vertically stacked
+- Center column: "Achievements" section with badge cards in a grid. 
+  Earned badges are colored, unearned are grayscale. Examples: 
+  "First module completed", "3-day streak", "First evaluation passed"
+- Right column: a "Certificate" card — locked until all modules are 
+  complete, showing a certificate icon and the message 
+  "Complete all modules to unlock your certificate"
+
+---
+
+### SCREEN 6 — TUTOR CHANNEL (Candidate's view)
+Lightweight messaging between candidate and tutor.
+
+Layout: two-panel — tutor info panel on the left (~30%), chat area 
+on the right (~70%).
+
+Must include:
+- Left panel: tutor profile card with name, title, availability status, 
+  and a brief bio placeholder. Below, a small list of recent topics or 
+  pinned resources the tutor has shared.
+- Right panel: a clean chat interface. Tutor messages appear on the left 
+  with avatar, candidate replies on the right. Visual distinction between 
+  the two. Tutor messages can include "nudges" like 
+  "I see you're stuck on Module 2 — here's a tip: [message]"
+- Fixed input bar at the bottom of the chat panel with a text field 
+  and send button
+- A subtle timestamp below each message group
+
+---
+
+### SCREEN 7 — TUTOR DASHBOARD (Tutor's view)
+The tutor's main view of all assigned candidates.
+
+Layout: full use of desktop space — sidebar + top bar shell, main area 
+as a data-rich panel.
+
+Must include:
+- An ALERT BANNER at the very top of the content area for urgent cases 
+  (e.g., "2 candidates have been inactive for 3+ days — Review now")
+- A filter/search bar row: search by name, filter by status 
+  (All / On track / Needs attention / Inactive)
+- A candidate TABLE or card-grid below, showing for each candidate: 
+  Name | Job they're training for | Overall progress bar | 
+  Last activity | Status badge
+- Each row/card is clickable and leads to Screen 8
+- The table should feel data-rich but not overwhelming — use generous 
+  row height, clear typography, and color-coded status badges
+
+---
+
+### SCREEN 8 — CANDIDATE DETAIL (Tutor's view)
+Deep dive on a single candidate.
+
+Layout: two-column — candidate summary on the left (~35%), 
+detailed panels on the right (~65%).
+
+Must include:
+- Left column: candidate profile card (name, age placeholder, 
+  neighborhood, applied job, enrollment date) and a compact overall 
+  progress ring. Below: a private "Tutor Notes" section with a 
+  text area for internal notes.
+- Right column (tabbed or stacked panels):
+  - Training progress: module-by-module breakdown with status and 
+    progress bars
+  - Evaluation history: pass/fail per module with score
+  - Activity timeline: chronological feed of actions 
+    ("Completed Module 1", "Failed evaluation for Module 2", 
+    "Last login: 2 days ago")
+- A prominent "Intervene — Open Chat" button fixed at the top right 
+  of the right column, leading to Screen 6
+
+---
+
+## IMPORTANT NOTES FOR THE AI
+
+- Do NOT add fake logos, brand names, or real company references
+- Use realistic placeholder data (fake names, realistic job titles, 
+  realistic module names related to office or administrative work)
+- The design must feel like a single coherent web application, 
+  not 8 disconnected pages
+- Prioritize visual consistency and a unified design language 
+  across all screens
+- Make full use of horizontal space in every screen — 
+  no single-column stretched-mobile layouts
+- The AI Training content area (Screen 3) must be clearly treated 
+  as a placeholder — do not simulate AI responses
+- Use Tailwind CSS for styling if building in React/Next.js
+- Deliver all screens within the same persistent layout shell 
+  (sidebar + topbar) so they feel like a real web app
+- All screens should be visible in a single deliverable, 
+  clearly labeled and separated
