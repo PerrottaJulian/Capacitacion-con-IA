@@ -9,7 +9,7 @@ export function ProgresoyLogros() {
         {/* Barra de estadísticas */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-center gap-4">
-            <div className="w-14 h-14 rounded-full bg-indigo-50 text-[#4F46E5] flex items-center justify-center">
+            <div className="w-14 h-14 rounded-full bg-indigo-50 text-[var(--cy-primary)] flex items-center justify-center">
               <Clock className="w-6 h-6" />
             </div>
             <div>
@@ -58,12 +58,12 @@ export function ProgresoyLogros() {
               </div>
 
               <div className="flex gap-4 relative py-4">
-                <div className="w-8 h-8 rounded-full bg-indigo-50 border-2 border-[#4F46E5] flex items-center justify-center z-10 mt-0.5 animate-pulse">
-                  <div className="w-2.5 h-2.5 bg-[#4F46E5] rounded-full"></div>
+                <div className="w-8 h-8 rounded-full bg-indigo-50 border-2 border-[var(--cy-primary)] flex items-center justify-center z-10 mt-0.5 animate-pulse">
+                  <div className="w-2.5 h-2.5 bg-[var(--cy-primary)] rounded-full"></div>
                 </div>
                 <div>
-                  <h4 className="font-bold text-[#4F46E5]">Módulo 2: Gestión Documental</h4>
-                  <p className="text-sm text-[#4F46E5] opacity-80 font-medium">En progreso</p>
+                  <h4 className="font-bold text-[var(--cy-primary)]">Módulo 2: Gestión Documental</h4>
+                  <p className="text-sm text-[var(--cy-primary)] opacity-80 font-medium">En progreso</p>
                 </div>
               </div>
 
@@ -151,10 +151,10 @@ export function ProgresoyLogros() {
             <div className="w-full mt-auto">
               <div className="flex justify-between items-center mb-2">
                 <span className="text-sm font-semibold text-[#1E293B]">Progreso del certificado</span>
-                <span className="text-sm font-bold text-[#4F46E5]">2 de 5 módulos</span>
+                <span className="text-sm font-bold text-[var(--cy-primary)]">2 de 5 módulos</span>
               </div>
               <div className="h-2.5 w-full bg-slate-100 rounded-full overflow-hidden">
-                <div className="h-full bg-[#4F46E5] rounded-full" style={{ width: "40%" }}></div>
+                <div className="h-full bg-[var(--cy-primary)] rounded-full" style={{ width: "40%" }}></div>
               </div>
             </div>
           </div>

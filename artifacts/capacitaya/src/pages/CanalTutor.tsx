@@ -12,7 +12,7 @@ export function CanalTutor() {
         <div className="w-full lg:w-[30%] bg-white rounded-2xl shadow-sm border border-slate-100 flex flex-col overflow-hidden">
           <div className="p-6 text-center border-b border-slate-100">
             <div className="relative inline-block mb-4">
-              <div className="w-24 h-24 rounded-full bg-indigo-100 flex items-center justify-center text-[#4F46E5] text-3xl font-bold mx-auto border-4 border-white shadow-sm">
+              <div className="w-24 h-24 rounded-full bg-indigo-100 flex items-center justify-center text-[var(--cy-primary)] text-3xl font-bold mx-auto border-4 border-white shadow-sm">
                 AG
               </div>
               <div className="absolute bottom-1 right-1 w-5 h-5 bg-[#10B981] border-2 border-white rounded-full"></div>
@@ -58,7 +58,7 @@ export function CanalTutor() {
           {/* Cabecera del chat */}
           <div className="p-4 border-b border-slate-100 bg-white z-10 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-[#4F46E5] font-bold">
+              <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-[var(--cy-primary)] font-bold">
                 AG
               </div>
               <div>
@@ -71,7 +71,7 @@ export function CanalTutor() {
           <div className="flex-1 overflow-y-auto p-6 space-y-6 bg-slate-50/50">
             {/* Mensaje de Ana */}
             <div className="flex gap-4 max-w-[85%]">
-              <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-[#4F46E5] text-xs font-bold flex-shrink-0 mt-auto mb-1">
+              <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-[var(--cy-primary)] text-xs font-bold flex-shrink-0 mt-auto mb-1">
                 AG
               </div>
               <div>
@@ -85,7 +85,7 @@ export function CanalTutor() {
             {/* Mensaje de Lucía (Yo) */}
             <div className="flex gap-4 max-w-[85%] ml-auto justify-end">
               <div className="flex flex-col items-end">
-                <div className="bg-[#4F46E5] p-4 rounded-2xl rounded-br-none shadow-sm text-white">
+                <div className="bg-[var(--cy-primary)] p-4 rounded-2xl rounded-br-none shadow-sm text-white">
                   ¡Hola Ana! Me fue bien, aunque la parte de Excel estuvo complicada al principio.
                 </div>
                 <div className="text-xs text-[#64748B] mt-1 mr-1 font-medium">10:38 AM</div>
@@ -94,7 +94,7 @@ export function CanalTutor() {
 
             {/* Mensaje de Ana (Nudge) */}
             <div className="flex gap-4 max-w-[85%]">
-              <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-[#4F46E5] text-xs font-bold flex-shrink-0 mt-auto mb-1">
+              <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-[var(--cy-primary)] text-xs font-bold flex-shrink-0 mt-auto mb-1">
                 AG
               </div>
               <div>
@@ -107,7 +107,7 @@ export function CanalTutor() {
 
             {/* Indicador de escritura */}
             <div className="flex gap-4 max-w-[85%]">
-              <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-[#4F46E5] text-xs font-bold flex-shrink-0">
+              <div className="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-[var(--cy-primary)] text-xs font-bold flex-shrink-0">
                 AG
               </div>
               <div className="bg-white border border-slate-200 px-4 py-3 rounded-2xl rounded-bl-none shadow-sm flex items-center gap-1.5">
@@ -133,7 +133,7 @@ export function CanalTutor() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
               />
-              <button className="w-12 h-12 rounded-xl bg-[#4F46E5] hover:bg-indigo-700 text-white flex items-center justify-center transition-colors flex-shrink-0 shadow-sm">
+              <button className="w-12 h-12 rounded-xl bg-[var(--cy-primary)] hover:bg-indigo-700 text-white flex items-center justify-center transition-colors flex-shrink-0 shadow-sm">
                 <Send className="w-5 h-5 ml-1" />
               </button>
             </div>

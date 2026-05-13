@@ -9,10 +9,10 @@ export function ModuloIA() {
       <div className="max-w-[760px] mx-auto pb-24">
         {/* Header content */}
         <div className="mb-8 text-center">
-          <p className="text-[#4F46E5] font-semibold mb-2">Módulo 2: Gestión Documental</p>
+          <p className="text-[var(--cy-primary)] font-semibold mb-2">Módulo 2: Gestión Documental</p>
           <div className="flex items-center justify-center gap-4">
             <div className="h-1.5 w-12 bg-emerald-500 rounded-full"></div>
-            <div className="h-1.5 w-12 bg-[#4F46E5] rounded-full"></div>
+            <div className="h-1.5 w-12 bg-[var(--cy-primary)] rounded-full"></div>
             <div className="h-1.5 w-12 bg-slate-200 rounded-full"></div>
             <div className="h-1.5 w-12 bg-slate-200 rounded-full"></div>
             <div className="h-1.5 w-12 bg-slate-200 rounded-full"></div>
@@ -24,7 +24,7 @@ export function ModuloIA() {
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-8 min-h-[400px] flex flex-col mb-6">
           <div className="flex-1 border-2 border-dashed border-slate-200 rounded-xl bg-[#F1F5F9] flex flex-col items-center justify-center p-8 text-center">
             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm mb-4">
-              <BrainCircuit className="w-8 h-8 text-[#4F46E5]" />
+              <BrainCircuit className="w-8 h-8 text-[var(--cy-primary)]" />
             </div>
             <p className="text-[#64748B] italic max-w-md leading-relaxed">
               "El contenido de capacitación generado por IA aparecerá aquí. El sistema preparará una lección personalizada basada en tu perfil y ritmo de aprendizaje."
@@ -38,7 +38,7 @@ export function ModuloIA() {
             <HelpCircle className="w-5 h-5 text-slate-400" /> Necesito ayuda
           </button>
           <Link href="/evaluacion">
-            <button className="flex-[2] w-full py-3.5 px-6 bg-[#4F46E5] hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 shadow-sm">
+            <button className="flex-[2] w-full py-3.5 px-6 bg-[var(--cy-primary)] hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors flex items-center justify-center gap-2 shadow-sm">
               Entendido, continuar <ArrowRight className="w-5 h-5" />
             </button>
           </Link>

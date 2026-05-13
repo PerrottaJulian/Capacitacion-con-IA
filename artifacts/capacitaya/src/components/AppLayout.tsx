@@ -1,6 +1,7 @@
 import React from "react";
-import { useLocation, Link } from "wouter";
+import { Link } from "wouter";
 import { Bell, Home, BookOpen, GraduationCap, LineChart, MessageSquare, Users, AlertCircle, FileText } from "lucide-react";
+import { ThemePicker } from "@/components/ThemePicker";
 
 interface AppLayoutProps {
   children: React.ReactNode;
@@ -36,12 +37,12 @@ export function AppLayout({ children, activePage, userRole = "candidato", userNa
     .toUpperCase();
 
   return (
-    <div className="flex h-screen w-full bg-[#F8FAFC] overflow-hidden text-[#1E293B] font-sans">
+    <div className="flex h-screen w-full bg-[#F8FAFC] dark:bg-slate-900 overflow-hidden text-[#1E293B] dark:text-slate-100 font-sans">
       {/* Sidebar */}
-      <aside className="w-[240px] flex-shrink-0 bg-white border-r border-slate-200 flex flex-col justify-between shadow-sm z-10">
+      <aside className="w-[240px] flex-shrink-0 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-700 flex flex-col justify-between shadow-sm z-10">
         <div>
           <div className="p-6">
-            <h1 className="text-2xl font-bold text-[#4F46E5] tracking-tight">CapacitaYa</h1>
+            <h1 className="text-2xl font-bold tracking-tight" style={{ color: "var(--cy-primary)" }}>CapacitaYa</h1>
           </div>
           <nav className="px-4 space-y-1">
             {links.map((link) => {
@@ -52,9 +53,13 @@ export function AppLayout({ children, activePage, userRole = "candidato", userNa
                   <div
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium transition-colors cursor-pointer ${
                       isActive
-                        ? "bg-indigo-50 text-[#4F46E5]"
-                        : "text-[#64748B] hover:text-[#1E293B] hover:bg-slate-50"
+                        ? "dark:bg-slate-800"
+                        : "text-[#64748B] dark:text-slate-400 hover:text-[#1E293B] dark:hover:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
                     }`}
+                    style={isActive ? {
+                      backgroundColor: "var(--cy-light-bg)",
+                      color: "var(--cy-primary)",
+                    } : {}}
                   >
                     <Icon className="w-5 h-5" />
                     {link.name}
@@ -67,22 +72,22 @@ export function AppLayout({ children, activePage, userRole = "candidato", userNa
 
         {isCandidato && (
           <div className="p-4 mt-auto">
-            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100">
-              <div className="text-xs font-semibold text-[#64748B] mb-3 uppercase tracking-wider">Tu Tutora</div>
+            <div className="bg-slate-50 dark:bg-slate-800 p-4 rounded-2xl border border-slate-100 dark:border-slate-700">
+              <div className="text-xs font-semibold text-[#64748B] dark:text-slate-400 mb-3 uppercase tracking-wider">Tu Tutora</div>
               <div className="flex items-center gap-3 mb-3">
                 <div className="relative">
-                  <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center text-[#4F46E5] font-bold">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center font-bold" style={{ backgroundColor: "var(--cy-light-bg)", color: "var(--cy-primary)" }}>
                     AG
                   </div>
-                  <div className="absolute bottom-0 right-0 w-3 h-3 bg-[#10B981] border-2 border-white rounded-full"></div>
+                  <div className="absolute bottom-0 right-0 w-3 h-3 bg-[#10B981] border-2 border-white dark:border-slate-800 rounded-full"></div>
                 </div>
                 <div>
-                  <div className="font-semibold text-sm">Ana García</div>
+                  <div className="font-semibold text-sm text-[#1E293B] dark:text-slate-100">Ana García</div>
                   <div className="text-xs text-[#10B981]">En línea</div>
                 </div>
               </div>
               <Link href="/canal-tutor">
-                <button className="w-full py-2 bg-white border border-slate-200 text-sm font-medium rounded-xl text-[#1E293B] hover:bg-slate-50 transition-colors">
+                <button className="w-full py-2 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-sm font-medium rounded-xl text-[#1E293B] dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-600 transition-colors">
                   Enviar mensaje
                 </button>
               </Link>
@@ -94,19 +99,20 @@ export function AppLayout({ children, activePage, userRole = "candidato", userNa
       {/* Main Content */}
       <div className="flex-1 flex flex-col h-screen overflow-hidden">
         {/* Topbar */}
-        <header className="h-[72px] flex-shrink-0 bg-white border-b border-slate-200 flex items-center justify-between px-8 z-10">
-          <h2 className="text-xl font-bold text-[#1E293B]">{activePage}</h2>
-          <div className="flex items-center gap-6">
-            <button className="relative text-[#64748B] hover:text-[#1E293B] transition-colors">
+        <header className="h-[72px] flex-shrink-0 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between px-8 z-10">
+          <h2 className="text-xl font-bold text-[#1E293B] dark:text-slate-100">{activePage}</h2>
+          <div className="flex items-center gap-3">
+            <ThemePicker />
+            <button className="relative text-[#64748B] dark:text-slate-400 hover:text-[#1E293B] dark:hover:text-slate-100 transition-colors">
               <Bell className="w-6 h-6" />
-              <span className="absolute top-0 right-0 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white"></span>
+              <span className="absolute top-0 right-0 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
             </button>
-            <div className="flex items-center gap-3 border-l border-slate-200 pl-6">
+            <div className="flex items-center gap-3 border-l border-slate-200 dark:border-slate-700 pl-4">
               <div className="text-right hidden sm:block">
-                <div className="text-sm font-semibold">{userName}</div>
-                <div className="text-xs text-[#64748B] capitalize">{userRole}</div>
+                <div className="text-sm font-semibold text-[#1E293B] dark:text-slate-100">{userName}</div>
+                <div className="text-xs text-[#64748B] dark:text-slate-400 capitalize">{userRole}</div>
               </div>
-              <div className="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 font-bold">
+              <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 font-bold">
                 {initials}
               </div>
             </div>

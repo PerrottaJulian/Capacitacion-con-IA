@@ -30,7 +30,7 @@ export function PanelTutor() {
           </div>
 
           <div className="flex overflow-x-auto w-full sm:w-auto gap-2 pb-2 sm:pb-0">
-            <button className="px-4 py-2 bg-[#4F46E5] text-white text-sm font-semibold rounded-lg whitespace-nowrap">Todos</button>
+            <button className="px-4 py-2 bg-[var(--cy-primary)] text-white text-sm font-semibold rounded-lg whitespace-nowrap">Todos</button>
             <button className="px-4 py-2 bg-slate-50 text-slate-600 border border-slate-200 hover:bg-slate-100 text-sm font-medium rounded-lg whitespace-nowrap transition-colors">En progreso</button>
             <button className="px-4 py-2 bg-slate-50 text-slate-600 border border-slate-200 hover:bg-slate-100 text-sm font-medium rounded-lg whitespace-nowrap transition-colors">Requiere atención</button>
             <button className="px-4 py-2 bg-slate-50 text-slate-600 border border-slate-200 hover:bg-slate-100 text-sm font-medium rounded-lg whitespace-nowrap transition-colors">Inactivos</button>
@@ -56,21 +56,21 @@ export function PanelTutor() {
                 <tr className="hover:bg-slate-50 transition-colors cursor-pointer group">
                   <td className="p-4 pl-6">
                     <Link href="/detalle-candidato">
-                      <div className="font-bold text-[#1E293B] group-hover:text-[#4F46E5] transition-colors">Lucía Ramírez</div>
+                      <div className="font-bold text-[#1E293B] group-hover:text-[var(--cy-primary)] transition-colors">Lucía Ramírez</div>
                     </Link>
                   </td>
                   <td className="p-4 text-[#64748B]">Asistente Administrativa Jr.</td>
                   <td className="p-4">
                     <div className="flex items-center gap-3">
                       <div className="w-24 h-2 bg-slate-100 rounded-full overflow-hidden">
-                        <div className="h-full bg-[#4F46E5] rounded-full" style={{ width: "47%" }}></div>
+                        <div className="h-full bg-[var(--cy-primary)] rounded-full" style={{ width: "47%" }}></div>
                       </div>
                       <span className="font-semibold text-[#1E293B]">47%</span>
                     </div>
                   </td>
                   <td className="p-4 text-[#64748B]">Hace 1 hora</td>
                   <td className="p-4">
-                    <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-indigo-50 text-[#4F46E5] uppercase">
+                    <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-indigo-50 text-[var(--cy-primary)] uppercase">
                       En progreso
                     </span>
                   </td>
@@ -103,7 +103,7 @@ export function PanelTutor() {
                 {/* Fila 3 */}
                 <tr className="hover:bg-slate-50 transition-colors cursor-pointer group">
                   <td className="p-4 pl-6">
-                    <div className="font-bold text-[#1E293B] group-hover:text-[#4F46E5] transition-colors">Valeria Torres</div>
+                    <div className="font-bold text-[#1E293B] group-hover:text-[var(--cy-primary)] transition-colors">Valeria Torres</div>
                   </td>
                   <td className="p-4 text-[#64748B]">Cajera de Comercio</td>
                   <td className="p-4">
@@ -147,20 +147,20 @@ export function PanelTutor() {
                 {/* Fila 5 */}
                 <tr className="hover:bg-slate-50 transition-colors cursor-pointer group">
                   <td className="p-4 pl-6">
-                    <div className="font-bold text-[#1E293B] group-hover:text-[#4F46E5] transition-colors">Sofía Mendoza</div>
+                    <div className="font-bold text-[#1E293B] group-hover:text-[var(--cy-primary)] transition-colors">Sofía Mendoza</div>
                   </td>
                   <td className="p-4 text-[#64748B]">Recepcionista</td>
                   <td className="p-4">
                     <div className="flex items-center gap-3">
                       <div className="w-24 h-2 bg-slate-100 rounded-full overflow-hidden">
-                        <div className="h-full bg-[#4F46E5] rounded-full" style={{ width: "60%" }}></div>
+                        <div className="h-full bg-[var(--cy-primary)] rounded-full" style={{ width: "60%" }}></div>
                       </div>
                       <span className="font-semibold text-[#1E293B]">60%</span>
                     </div>
                   </td>
                   <td className="p-4 text-[#64748B]">Hace 1 día</td>
                   <td className="p-4">
-                    <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-indigo-50 text-[#4F46E5] uppercase">
+                    <span className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold bg-indigo-50 text-[var(--cy-primary)] uppercase">
                       En progreso
                     </span>
                   </td>

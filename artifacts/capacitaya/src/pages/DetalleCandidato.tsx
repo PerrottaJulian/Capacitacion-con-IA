@@ -88,19 +88,19 @@ export function DetalleCandidato() {
             <div className="flex border-b border-slate-100 bg-slate-50/50">
               <button
                 onClick={() => setActiveTab('progreso')}
-                className={`flex-1 py-4 px-4 text-sm font-bold border-b-2 transition-colors ${activeTab === 'progreso' ? 'border-[#4F46E5] text-[#4F46E5] bg-white' : 'border-transparent text-[#64748B] hover:text-[#1E293B]'}`}
+                className={`flex-1 py-4 px-4 text-sm font-bold border-b-2 transition-colors ${activeTab === 'progreso' ? 'border-[var(--cy-primary)] text-[var(--cy-primary)] bg-white' : 'border-transparent text-[#64748B] hover:text-[#1E293B]'}`}
               >
                 Progreso por Módulo
               </button>
               <button
                 onClick={() => setActiveTab('evaluaciones')}
-                className={`flex-1 py-4 px-4 text-sm font-bold border-b-2 transition-colors ${activeTab === 'evaluaciones' ? 'border-[#4F46E5] text-[#4F46E5] bg-white' : 'border-transparent text-[#64748B] hover:text-[#1E293B]'}`}
+                className={`flex-1 py-4 px-4 text-sm font-bold border-b-2 transition-colors ${activeTab === 'evaluaciones' ? 'border-[var(--cy-primary)] text-[var(--cy-primary)] bg-white' : 'border-transparent text-[#64748B] hover:text-[#1E293B]'}`}
               >
                 Evaluaciones
               </button>
               <button
                 onClick={() => setActiveTab('actividad')}
-                className={`flex-1 py-4 px-4 text-sm font-bold border-b-2 transition-colors ${activeTab === 'actividad' ? 'border-[#4F46E5] text-[#4F46E5] bg-white' : 'border-transparent text-[#64748B] hover:text-[#1E293B]'}`}
+                className={`flex-1 py-4 px-4 text-sm font-bold border-b-2 transition-colors ${activeTab === 'actividad' ? 'border-[var(--cy-primary)] text-[var(--cy-primary)] bg-white' : 'border-transparent text-[#64748B] hover:text-[#1E293B]'}`}
               >
                 Actividad Reciente
               </button>
@@ -121,11 +121,11 @@ export function DetalleCandidato() {
 
                 <div className="bg-amber-50/50 p-4 rounded-xl border border-amber-100 -mx-4 px-4">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="font-bold text-[#4F46E5]">Módulo 2: Gestión Documental</span>
-                    <span className="text-sm font-bold text-[#4F46E5]">20% (estancado)</span>
+                    <span className="font-bold text-[var(--cy-primary)]">Módulo 2: Gestión Documental</span>
+                    <span className="text-sm font-bold text-[var(--cy-primary)]">20% (estancado)</span>
                   </div>
                   <div className="h-3 w-full bg-slate-200 rounded-full overflow-hidden mb-2">
-                    <div className="h-full bg-[#4F46E5] rounded-full" style={{ width: "20%" }}></div>
+                    <div className="h-full bg-[var(--cy-primary)] rounded-full" style={{ width: "20%" }}></div>
                   </div>
                   <p className="text-xs text-amber-700 font-medium">Lleva 4 días sin avanzar en este módulo.</p>
                 </div>
@@ -190,8 +190,8 @@ export function DetalleCandidato() {
 
                 <div className="flex gap-4 relative">
                   <div className="absolute left-4 top-8 bottom-[-24px] w-0.5 bg-slate-200"></div>
-                  <div className="w-8 h-8 rounded-full bg-indigo-50 border-2 border-[#4F46E5] flex items-center justify-center flex-shrink-0 z-10">
-                    <div className="w-2.5 h-2.5 bg-[#4F46E5] rounded-full"></div>
+                  <div className="w-8 h-8 rounded-full bg-indigo-50 border-2 border-[var(--cy-primary)] flex items-center justify-center flex-shrink-0 z-10">
+                    <div className="w-2.5 h-2.5 bg-[var(--cy-primary)] rounded-full"></div>
                   </div>
                   <div>
                     <p className="font-medium text-[#1E293B]">Inició Módulo 2: Gestión Documental</p>

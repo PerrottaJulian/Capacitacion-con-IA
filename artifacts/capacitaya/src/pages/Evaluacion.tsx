@@ -13,7 +13,7 @@ export function Evaluacion() {
         <div className="text-center mb-8">
           <h1 className="text-2xl font-bold text-[#1E293B] mb-2">Checkpoint del Módulo</h1>
           <p className="text-[#64748B]">Módulo 2: Gestión Documental</p>
-          <div className="mt-4 inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-50 text-[#4F46E5] rounded-full text-sm font-semibold">
+          <div className="mt-4 inline-flex items-center gap-2 px-4 py-1.5 bg-indigo-50 text-[var(--cy-primary)] rounded-full text-sm font-semibold">
             3 de 4 preguntas respondidas
           </div>
         </div>
@@ -25,9 +25,9 @@ export function Evaluacion() {
             <h3 className="font-bold text-lg mb-4 text-[#1E293B]">1. ¿Qué tipo de sistema de nomenclatura se usa para archivos digitales?</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div className="p-4 rounded-xl border border-slate-200 text-[#64748B]">A) Alfabético simple</div>
-              <div className="p-4 rounded-xl border-2 border-[#4F46E5] bg-indigo-50 text-[#4F46E5] font-medium relative">
+              <div className="p-4 rounded-xl border-2 border-[var(--cy-primary)] bg-indigo-50 text-[var(--cy-primary)] font-medium relative">
                 B) Año-Mes-Día_Nombre
-                <div className="absolute top-1/2 -translate-y-1/2 right-4 w-5 h-5 rounded-full bg-[#4F46E5] text-white flex items-center justify-center">
+                <div className="absolute top-1/2 -translate-y-1/2 right-4 w-5 h-5 rounded-full bg-[var(--cy-primary)] text-white flex items-center justify-center">
                   <div className="w-2 h-2 bg-white rounded-full"></div>
                 </div>
               </div>
@@ -50,9 +50,9 @@ export function Evaluacion() {
             <div className="absolute -top-3 left-6 px-2 bg-white text-xs font-bold text-[#F59E0B] uppercase tracking-wider">Turno actual</div>
             <h3 className="font-bold text-lg mb-4 text-[#1E293B]">3. ¿Qué significa 'archivo muerto' en gestión documental?</h3>
             <div className="grid grid-cols-1 gap-3">
-              <button className="text-left p-4 rounded-xl border border-slate-200 hover:border-[#4F46E5] hover:bg-slate-50 transition-colors text-[#1E293B]">Documentos que ya no tienen vigencia y se conservan por ley</button>
-              <button className="text-left p-4 rounded-xl border border-slate-200 hover:border-[#4F46E5] hover:bg-slate-50 transition-colors text-[#1E293B]">Archivos borrados de la papelera</button>
-              <button className="text-left p-4 rounded-xl border border-slate-200 hover:border-[#4F46E5] hover:bg-slate-50 transition-colors text-[#1E293B]">Papeles rotos o dañados</button>
+              <button className="text-left p-4 rounded-xl border border-slate-200 hover:border-[var(--cy-primary)] hover:bg-slate-50 transition-colors text-[#1E293B]">Documentos que ya no tienen vigencia y se conservan por ley</button>
+              <button className="text-left p-4 rounded-xl border border-slate-200 hover:border-[var(--cy-primary)] hover:bg-slate-50 transition-colors text-[#1E293B]">Archivos borrados de la papelera</button>
+              <button className="text-left p-4 rounded-xl border border-slate-200 hover:border-[var(--cy-primary)] hover:bg-slate-50 transition-colors text-[#1E293B]">Papeles rotos o dañados</button>
             </div>
           </div>
 
@@ -78,7 +78,7 @@ export function Evaluacion() {
               <p className="text-lg text-[#1E293B] font-medium mb-8">¡Excelente trabajo, Lucía! Avanzas al Módulo 3.</p>
 
               <Link href="/progreso">
-                <button className="w-full py-4 bg-[#4F46E5] text-white font-bold rounded-xl hover:bg-indigo-700 transition-colors flex justify-center items-center gap-2">
+                <button className="w-full py-4 bg-[var(--cy-primary)] text-white font-bold rounded-xl hover:bg-indigo-700 transition-colors flex justify-center items-center gap-2">
                   Ver mi progreso <ArrowRight className="w-5 h-5" />
                 </button>
               </Link>
@@ -97,7 +97,7 @@ export function Evaluacion() {
 
             <button
               onClick={() => setSubmitted(true)}
-              className="py-3 px-8 bg-[#4F46E5] hover:bg-indigo-700 text-white font-bold rounded-xl transition-colors flex items-center gap-2 shadow-sm"
+              className="py-3 px-8 bg-[var(--cy-primary)] hover:bg-indigo-700 text-white font-bold rounded-xl transition-colors flex items-center gap-2 shadow-sm"
             >
               Enviar respuestas <ArrowRight className="w-5 h-5" />
             </button>

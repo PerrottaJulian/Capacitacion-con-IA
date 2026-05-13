@@ -8,7 +8,7 @@ export function Dashboard() {
     <AppLayout activePage="Inicio">
       <div className="space-y-6">
         {/* Banner */}
-        <div className="bg-[#4F46E5] rounded-2xl p-8 text-white shadow-sm overflow-hidden relative">
+        <div className="bg-[var(--cy-primary)] rounded-2xl p-8 text-white shadow-sm overflow-hidden relative">
           <div className="relative z-10">
             <h1 className="text-2xl md:text-3xl font-bold mb-2">¡Bienvenida de nuevo, Lucía!</h1>
             <p className="text-indigo-100 text-lg">Capacitación para: Asistente Administrativa Jr. en Empresa Global S.A.</p>
@@ -29,7 +29,7 @@ export function Dashboard() {
                     <circle
                       cx="50" cy="50" r="45"
                       fill="none"
-                      stroke="#4F46E5"
+                      stroke="var(--cy-primary)"
                       strokeWidth="10"
                       strokeDasharray="283"
                       strokeDashoffset={283 - (283 * 47) / 100}
@@ -76,7 +76,7 @@ export function Dashboard() {
 
               <div className="mt-8 pt-6 border-t border-slate-100">
                 <Link href="/modulo">
-                  <button className="w-full flex items-center justify-center gap-2 bg-[#4F46E5] hover:bg-indigo-700 text-white py-3.5 rounded-xl font-semibold transition-colors">
+                  <button className="w-full flex items-center justify-center gap-2 bg-[var(--cy-primary)] hover:bg-indigo-700 text-white py-3.5 rounded-xl font-semibold transition-colors">
                     Continuar capacitación <ArrowRight className="w-5 h-5" />
                   </button>
                 </Link>
@@ -92,7 +92,7 @@ export function Dashboard() {
               <h3 className="font-bold text-lg mb-4">Tu Tutora</h3>
               <div className="flex items-center gap-4 mb-6">
                 <div className="relative">
-                  <div className="w-14 h-14 rounded-full bg-indigo-100 flex items-center justify-center text-[#4F46E5] text-xl font-bold">
+                  <div className="w-14 h-14 rounded-full bg-indigo-100 flex items-center justify-center text-[var(--cy-primary)] text-xl font-bold">
                     AG
                   </div>
                   <div className="absolute bottom-0 right-0 w-4 h-4 bg-[#10B981] border-2 border-white rounded-full"></div>
@@ -135,7 +135,7 @@ export function Dashboard() {
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="w-8 h-8 rounded-full bg-indigo-100 text-[#4F46E5] flex items-center justify-center flex-shrink-0 z-10">
+                  <div className="w-8 h-8 rounded-full bg-indigo-100 text-[var(--cy-primary)] flex items-center justify-center flex-shrink-0 z-10">
                     <BookOpen className="w-4 h-4" />
                   </div>
                   <div>

@@ -15,11 +15,11 @@ export function PlanCapacitacion() {
               <p className="text-[#64748B]">Tiempo total estimado: 3 semanas · 12 horas</p>
             </div>
             <div className="text-right">
-              <span className="inline-block bg-indigo-50 text-[#4F46E5] font-bold px-3 py-1 rounded-lg text-sm mb-2">47% completado</span>
+              <span className="inline-block bg-indigo-50 text-[var(--cy-primary)] font-bold px-3 py-1 rounded-lg text-sm mb-2">47% completado</span>
             </div>
           </div>
           <div className="h-3 w-full bg-slate-100 rounded-full overflow-hidden">
-            <div className="h-full bg-[#4F46E5] rounded-full transition-all duration-1000" style={{ width: "47%" }}></div>
+            <div className="h-full bg-[var(--cy-primary)] rounded-full transition-all duration-1000" style={{ width: "47%" }}></div>
           </div>
         </div>
 
@@ -52,15 +52,15 @@ export function PlanCapacitacion() {
               {/* Modulo 2: En progreso */}
               <div className="flex gap-4 items-start relative p-3 rounded-xl bg-indigo-50/50 border border-indigo-100">
                 <div className="absolute left-7 top-10 bottom-[-16px] w-0.5 bg-slate-200"></div>
-                <div className="w-8 h-8 rounded-full bg-[#4F46E5] text-white flex items-center justify-center flex-shrink-0 z-10 mt-1 shadow-md shadow-indigo-200 ring-4 ring-indigo-50">
+                <div className="w-8 h-8 rounded-full bg-[var(--cy-primary)] text-white flex items-center justify-center flex-shrink-0 z-10 mt-1 shadow-md shadow-indigo-200 ring-4 ring-indigo-50">
                   <div className="w-2.5 h-2.5 bg-white rounded-full"></div>
                 </div>
                 <div className="flex-1">
                   <div className="flex justify-between items-start">
-                    <h4 className="font-bold text-[#4F46E5]">Módulo 2: Gestión Documental</h4>
-                    <span className="text-xs font-semibold bg-indigo-100 text-[#4F46E5] px-2 py-0.5 rounded uppercase">En Progreso</span>
+                    <h4 className="font-bold text-[var(--cy-primary)]">Módulo 2: Gestión Documental</h4>
+                    <span className="text-xs font-semibold bg-indigo-100 text-[var(--cy-primary)] px-2 py-0.5 rounded uppercase">En Progreso</span>
                   </div>
-                  <p className="text-sm text-[#4F46E5] opacity-80 flex items-center gap-1 mt-1"><Clock className="w-3 h-3" /> 2.5h</p>
+                  <p className="text-sm text-[var(--cy-primary)] opacity-80 flex items-center gap-1 mt-1"><Clock className="w-3 h-3" /> 2.5h</p>
                 </div>
               </div>
 
@@ -115,13 +115,13 @@ export function PlanCapacitacion() {
             <div className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden sticky top-6">
               <div className="h-32 bg-indigo-50 relative overflow-hidden flex items-center justify-center">
                 <FileText className="w-16 h-16 text-indigo-200 absolute -right-4 -bottom-4 transform rotate-12" />
-                <div className="w-16 h-16 bg-[#4F46E5] rounded-2xl flex items-center justify-center shadow-lg transform -translate-y-4">
+                <div className="w-16 h-16 bg-[var(--cy-primary)] rounded-2xl flex items-center justify-center shadow-lg transform -translate-y-4">
                   <FileText className="w-8 h-8 text-white" />
                 </div>
               </div>
 
               <div className="p-8 relative -mt-10 bg-white rounded-t-3xl">
-                <div className="inline-block bg-indigo-100 text-[#4F46E5] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">
+                <div className="inline-block bg-indigo-100 text-[var(--cy-primary)] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4">
                   Módulo Actual
                 </div>
                 <h2 className="text-2xl font-bold mb-4">Módulo 2: Gestión Documental</h2>
@@ -151,15 +151,15 @@ export function PlanCapacitacion() {
                 <div className="mb-8 p-4 bg-slate-50 rounded-xl border border-slate-100">
                   <div className="flex justify-between items-center mb-2">
                     <span className="font-semibold text-sm">Tu progreso en este módulo</span>
-                    <span className="font-bold text-sm text-[#4F46E5]">33%</span>
+                    <span className="font-bold text-sm text-[var(--cy-primary)]">33%</span>
                   </div>
                   <div className="h-2 w-full bg-slate-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#4F46E5] rounded-full" style={{ width: "33%" }}></div>
+                    <div className="h-full bg-[var(--cy-primary)] rounded-full" style={{ width: "33%" }}></div>
                   </div>
                 </div>
 
                 <Link href="/modulo">
-                  <button className="w-full flex items-center justify-center gap-2 bg-[#4F46E5] hover:bg-indigo-700 text-white py-4 rounded-xl font-bold text-lg transition-colors shadow-sm">
+                  <button className="w-full flex items-center justify-center gap-2 bg-[var(--cy-primary)] hover:bg-indigo-700 text-white py-4 rounded-xl font-bold text-lg transition-colors shadow-sm">
                     Continuar módulo <ArrowRight className="w-6 h-6" />
                   </button>
                 </Link>

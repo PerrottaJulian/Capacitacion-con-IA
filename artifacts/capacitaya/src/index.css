@@ -227,6 +227,166 @@
   }
 }
 
+/* =====================================================
+   COLOR SCHEME VARIABLES — set via data-color on <html>
+   ===================================================== */
+
+:root,
+[data-color="indigo"] {
+  --cy-primary:     #4F46E5;
+  --cy-primary-dark:#4338CA;
+  --cy-light-bg:    #EEF2FF;
+  --cy-medium-bg:   #E0E7FF;
+  --cy-border:      #C7D2FE;
+}
+
+[data-color="blue"] {
+  --cy-primary:     #2563EB;
+  --cy-primary-dark:#1D4ED8;
+  --cy-light-bg:    #EFF6FF;
+  --cy-medium-bg:   #DBEAFE;
+  --cy-border:      #BFDBFE;
+  --primary: 221 83% 53%;
+  --ring:    221 83% 53%;
+  --sidebar-primary: 221 83% 53%;
+  --sidebar-accent: 221 83% 96%;
+  --accent: 221 83% 96%;
+}
+
+[data-color="green"] {
+  --cy-primary:     #059669;
+  --cy-primary-dark:#047857;
+  --cy-light-bg:    #ECFDF5;
+  --cy-medium-bg:   #D1FAE5;
+  --cy-border:      #A7F3D0;
+  --primary: 160 91% 30%;
+  --ring:    160 91% 30%;
+  --sidebar-primary: 160 91% 30%;
+  --sidebar-accent: 160 91% 96%;
+  --accent: 160 91% 96%;
+}
+
+[data-color="orange"] {
+  --cy-primary:     #EA580C;
+  --cy-primary-dark:#C2410C;
+  --cy-light-bg:    #FFF7ED;
+  --cy-medium-bg:   #FFEDD5;
+  --cy-border:      #FED7AA;
+  --primary: 21 90% 48%;
+  --ring:    21 90% 48%;
+  --sidebar-primary: 21 90% 48%;
+  --sidebar-accent: 21 90% 96%;
+  --accent: 21 90% 96%;
+}
+
+[data-color="violet"] {
+  --cy-primary:     #7C3AED;
+  --cy-primary-dark:#6D28D9;
+  --cy-light-bg:    #F5F3FF;
+  --cy-medium-bg:   #EDE9FE;
+  --cy-border:      #DDD6FE;
+  --primary: 263 70% 58%;
+  --ring:    263 70% 58%;
+  --sidebar-primary: 263 70% 58%;
+  --sidebar-accent: 263 70% 96%;
+  --accent: 263 70% 96%;
+}
+
+/* Theme picker active-state buttons use the current scheme color */
+[data-color] {
+  --theme-primary: var(--cy-primary);
+  --theme-accent: var(--cy-light-bg);
+}
+
+/* =====================================================
+   DARK MODE — page-level structural overrides
+   ===================================================== */
+
+.dark body {
+  background-color: hsl(222 47% 11%);
+  color: rgb(226 232 240);
+}
+
+/* Cards and white surfaces */
+.dark .bg-white {
+  background-color: hsl(222 47% 14%) !important;
+}
+
+/* Page background */
+.dark .bg-\[\#F8FAFC\] {
+  background-color: hsl(222 47% 11%) !important;
+}
+
+/* Subtle / hover backgrounds */
+.dark .bg-slate-50 {
+  background-color: hsl(222 47% 17%) !important;
+}
+.dark .bg-slate-50\/50 {
+  background-color: hsl(222 47% 15% / 0.5) !important;
+}
+.dark .hover\:bg-slate-50:hover {
+  background-color: hsl(222 47% 19%) !important;
+}
+
+/* Borders */
+.dark .border-slate-100 {
+  border-color: hsl(217 33% 22%) !important;
+}
+.dark .border-slate-200 {
+  border-color: hsl(217 33% 26%) !important;
+}
+
+/* Text */
+.dark .text-\[\#1E293B\] {
+  color: rgb(226 232 240) !important;
+}
+.dark .text-\[\#64748B\] {
+  color: rgb(148 163 184) !important;
+}
+.dark .text-slate-700 {
+  color: rgb(203 213 225) !important;
+}
+.dark .text-slate-500 {
+  color: rgb(148 163 184) !important;
+}
+.dark .text-slate-400 {
+  color: rgb(100 116 139) !important;
+}
+
+/* Inputs */
+.dark input,
+.dark textarea {
+  background-color: hsl(222 47% 17%);
+  border-color: hsl(217 33% 30%);
+  color: rgb(226 232 240);
+}
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: rgb(100 116 139);
+}
+
+/* Tables */
+.dark table thead tr {
+  background-color: hsl(222 47% 17%) !important;
+}
+.dark table tbody tr:hover {
+  background-color: hsl(222 47% 19%) !important;
+}
+.dark .divide-slate-100 > * + * {
+  border-color: hsl(217 33% 22%) !important;
+}
+
+/* Light coloured chip/badge backgrounds */
+.dark .bg-slate-100 {
+  background-color: hsl(217 33% 22%) !important;
+}
+.dark .bg-indigo-50\/50 {
+  background-color: hsl(239 60% 18% / 0.5) !important;
+}
+.dark .border-indigo-100 {
+  border-color: hsl(239 60% 28%) !important;
+}
+
 @layer utilities {
   input[type="search"]::-webkit-search-cancel-button {
     @apply hidden;
