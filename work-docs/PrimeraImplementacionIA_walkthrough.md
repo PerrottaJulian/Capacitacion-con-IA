@@ -4,9 +4,10 @@ Se completó con éxito la primera fase de integración con la API de **Capacity
 
 ## Cambios Realizados
 
-### 1. Capa de Integración API (`src/lib/api.ts`)
+### 1. Capa de Integración API (`src/lib/api.ts` y proxy)
+*   Se configuró un **proxy de desarrollo en Vite** (`vite.config.ts`) que redirige todas las llamadas `/api` a `https://capacity-ar-ap.onrender.com` para evitar las restricciones de políticas de CORS del navegador en local.
 *   Se crearon las interfaces TypeScript correspondientes a los modelos del backend (`StoredLearningPath`, `GeneratedModule`, `GeneratedUnit`, etc.).
-*   Se implementaron funciones usando `fetch` para consumir:
+*   Se implementaron funciones usando `fetch` relativas (apuntando al proxy) para consumir:
     *   `GET /api/students/{email}/learning-paths`
     *   `GET /api/learning-paths/{path_id}`
 *   Se incluyeron datos **fallback locales** sumamente robustos con la estructura idéntica de la API. Esto garantiza resiliencia si el servidor de Render está apagado o demora en responder por *cold start*.

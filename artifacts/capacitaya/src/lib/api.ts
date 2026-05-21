@@ -49,7 +49,7 @@ export interface StoredLearningPath {
   updated_at: string;
 }
 
-const API_BASE_URL = "https://capacity-ar-ap.onrender.com";
+const API_BASE_URL = "";
 
 // Fallback robust mock data matching StoredLearningPath schema
 export const MOCK_LEARNING_PATH: StoredLearningPath = {

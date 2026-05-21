@@ -22,11 +22,14 @@ Este plan detalla los pasos para conectar la aplicación frontend con la API ext
 
 ### [API Integration Layer]
 
-Crearemos un cliente API simple y tipado para centralizar las peticiones a la API externa de Capacity AR.
+Crearemos un cliente API simple y tipado para centralizar las peticiones a la API externa de Capacity AR. Para evitar problemas de CORS en el navegador, configuramos un proxy local en el servidor de desarrollo.
+
+#### [MODIFY] [vite.config.ts](file:///c:/Users/jperrotta/dev/Capacitacion-con-IA/artifacts/capacitaya/vite.config.ts)
+* Configurar la propiedad `proxy` dentro de `server` redirigiendo las llamadas de `/api` hacia `https://capacity-ar-ap.onrender.com`.
 
 #### [NEW] [api.ts](file:///c:/Users/jperrotta/dev/Capacitacion-con-IA/artifacts/capacitaya/src/lib/api.ts)
 * Crear funciones para:
-  * `getStudentLearningPaths(email)`: Llama a `GET /api/students/{email}/learning-paths`
+  * `getStudentLearningPaths(email)`: Llama a `GET /api/students/{email}/learning-paths` (relativo `/api/...` mediante proxy)
   * `getLearningPath(pathId)`: Llama a `GET /api/learning-paths/{path_id}`
 * Definir las interfaces de TypeScript alineadas con los esquemas de la API: `StoredLearningPath`, `GeneratedModule`, `GeneratedUnit`, `GeneratedExercise`.
 * Incluir datos fallback con la misma estructura para asegurar el correcto renderizado ante fallas o demoras del servidor.

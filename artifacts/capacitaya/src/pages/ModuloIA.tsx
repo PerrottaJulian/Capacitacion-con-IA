@@ -119,8 +119,8 @@ export function ModuloIA() {
   const [currentUnitIndex, setCurrentUnitIndex] = useState(1); // Default to Paso 2
 
   const { data: paths, isLoading, error, refetch } = useQuery({
-    queryKey: ["learningPaths", "lucia@example.com"],
-    queryFn: () => getStudentLearningPaths("lucia@example.com"),
+    queryKey: ["learningPaths", "ivan.gaptest@example.com"],
+    queryFn: () => getStudentLearningPaths("ivan.gaptest@example.com"),
     staleTime: 1000 * 60 * 5, // 5 minutes
   });
 

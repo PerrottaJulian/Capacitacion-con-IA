@@ -36,6 +36,13 @@ export default defineConfig({
     fs: {
       strict: true,
     },
+    proxy: {
+      "/api": {
+        target: "https://capacity-ar-ap.onrender.com",
+        changeOrigin: true,
+        secure: false,
+      },
+    },
   },
   preview: {
     port,
