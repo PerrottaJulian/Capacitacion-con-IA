@@ -77,11 +77,11 @@ export function ThemePicker() {
                   }`}
                   style={{
                     backgroundColor: scheme.hex,
-                    ringColor: scheme.hex,
+                    "--tw-ring-color": scheme.hex,
                     outlineColor: color === scheme.id ? scheme.hex : "transparent",
                     outline: color === scheme.id ? `2px solid ${scheme.hex}` : "none",
                     outlineOffset: "3px",
-                  }}
+                  } as React.CSSProperties}
                 />
               ))}
             </div>
