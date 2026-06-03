@@ -113,7 +113,7 @@ function parseMarkdown(text: string): React.ReactNode[] {
 
   return nodes;
 }
-
+//extra
 export function ModuloIA() {
   const [, setLocation] = useLocation();
   const [currentUnitIndex, setCurrentUnitIndex] = useState(1); // Default to Paso 2
