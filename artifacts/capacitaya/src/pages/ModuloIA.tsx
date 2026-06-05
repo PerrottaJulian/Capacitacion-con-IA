@@ -113,14 +113,16 @@ function parseMarkdown(text: string): React.ReactNode[] {
 
   return nodes;
 }
-//extra
+import { useAuth } from "@/contexts/AuthContext";
+
 export function ModuloIA() {
   const [, setLocation] = useLocation();
   const [currentUnitIndex, setCurrentUnitIndex] = useState(1); // Default to Paso 2
+  const { email } = useAuth();
 
   const { data: paths, isLoading, error, refetch } = useQuery({
-    queryKey: ["learningPaths", "lucia@example.com"],
-    queryFn: () => getStudentLearningPaths("lucia@example.com"),
+    queryKey: ["learningPaths", email || "lucia@example.com"],
+    queryFn: () => getStudentLearningPaths(email || "lucia@example.com"),
     staleTime: 1000 * 60 * 5, // 5 minutes
   });
 

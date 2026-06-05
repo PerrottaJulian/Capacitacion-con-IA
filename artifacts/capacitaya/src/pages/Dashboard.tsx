@@ -2,16 +2,27 @@ import React from "react";
 import { AppLayout } from "@/components/AppLayout";
 import { CheckCircle2, ArrowRight, MessageSquare, Clock, Check, BookOpen } from "lucide-react";
 import { Link } from "wouter";
+import { useAuth } from "@/contexts/AuthContext";
 
 export function Dashboard() {
+  const { studentName, companyName, targetRole, learningPath } = useAuth();
+
+  const firstName = studentName ? studentName.split(" ")[0] : "Estudiante";
+  const displayRole = targetRole || "Candidato";
+  const displayCompany = companyName || "Empresa";
+  const progressValue = learningPath?.readiness_score_initial ?? 47;
+
+  // Modulos del plan
+  const modules = learningPath?.modules || [];
+  
   return (
     <AppLayout activePage="Inicio">
       <div className="space-y-6">
         {/* Banner */}
         <div className="bg-[var(--cy-primary)] rounded-2xl p-8 text-white shadow-sm overflow-hidden relative">
           <div className="relative z-10">
-            <h1 className="text-2xl md:text-3xl font-bold mb-2">¡Bienvenida de nuevo, Lucía!</h1>
-            <p className="text-indigo-100 text-lg">Capacitación para: Asistente Administrativa Jr. en Empresa Global S.A.</p>
+            <h1 className="text-2xl md:text-3xl font-bold mb-2">¡Bienvenida de nuevo, {firstName}!</h1>
+            <p className="text-indigo-100 text-lg">Capacitación para: {displayRole} en {displayCompany}</p>
           </div>
           <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-y-1/2 translate-x-1/4"></div>
           <div className="absolute bottom-0 right-32 w-32 h-32 bg-white opacity-5 rounded-full translate-y-1/4"></div>
@@ -32,15 +43,17 @@ export function Dashboard() {
                       stroke="var(--cy-primary)"
                       strokeWidth="10"
                       strokeDasharray="283"
-                      strokeDashoffset={283 - (283 * 47) / 100}
+                      strokeDashoffset={283 - (283 * progressValue) / 100}
                       strokeLinecap="round"
                     />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <span className="text-3xl font-bold text-[#1E293B]">47%</span>
+                    <span className="text-3xl font-bold text-[#1E293B]">{progressValue}%</span>
                   </div>
                 </div>
-                <p className="text-center font-medium text-[#1E293B]">¡Vas por la mitad del camino!</p>
+                <p className="text-center font-medium text-[#1E293B]">
+                  {progressValue >= 50 ? "¡Vas por excelente camino!" : "¡Buen comienzo!"}
+                </p>
                 <p className="text-center text-sm text-[#64748B] mt-1">Sigue así, estás cada vez más cerca.</p>
               </div>
             </div>
@@ -55,9 +68,14 @@ export function Dashboard() {
                 <div>
                   <h4 className="text-sm font-semibold text-[#64748B] mb-3 uppercase tracking-wider">Por mejorar</h4>
                   <div className="flex flex-wrap gap-2">
-                    <span className="px-3 py-1.5 bg-amber-50 text-[#F59E0B] border border-amber-200 rounded-lg text-sm font-medium">Excel avanzado</span>
-                    <span className="px-3 py-1.5 bg-amber-50 text-[#F59E0B] border border-amber-200 rounded-lg text-sm font-medium">Gestión documental</span>
-                    <span className="px-3 py-1.5 bg-amber-50 text-[#F59E0B] border border-amber-200 rounded-lg text-sm font-medium">Comunicación escrita</span>
+                    {modules.map((m, i) => (
+                      <span key={i} className="px-3 py-1.5 bg-amber-50 text-[#F59E0B] border border-amber-200 rounded-lg text-sm font-medium">
+                        {m.skill_name}
+                      </span>
+                    ))}
+                    {modules.length === 0 && (
+                      <span className="text-sm text-slate-400">No hay módulos cargados</span>
+                    )}
                   </div>
                 </div>
 
@@ -151,3 +169,4 @@ export function Dashboard() {
     </AppLayout>
   );
 }
+

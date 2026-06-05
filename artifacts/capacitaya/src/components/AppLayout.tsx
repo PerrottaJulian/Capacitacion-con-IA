@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "wouter";
-import { Bell, Home, BookOpen, GraduationCap, LineChart, MessageSquare, Users, AlertCircle, FileText } from "lucide-react";
+import { Link, useLocation } from "wouter";
+import { Bell, Home, BookOpen, GraduationCap, LineChart, MessageSquare, Users, AlertCircle, FileText, LogOut } from "lucide-react";
 import { ThemePicker } from "@/components/ThemePicker";
+import { useAuth } from "@/contexts/AuthContext";
 
 interface AppLayoutProps {
   children: React.ReactNode;
@@ -10,8 +11,11 @@ interface AppLayoutProps {
   userName?: string;
 }
 
-export function AppLayout({ children, activePage, userRole = "candidato", userName = "Lucía Ramírez" }: AppLayoutProps) {
+export function AppLayout({ children, activePage, userRole = "candidato", userName: propUserName }: AppLayoutProps) {
+  const { studentName, logout } = useAuth();
+  const [, setLocation] = useLocation();
   const isCandidato = userRole === "candidato";
+  const displayUserName = studentName || propUserName || "Estudiante";
 
   const candidatoLinks = [
     { name: "Inicio", path: "/", icon: Home },
@@ -29,12 +33,17 @@ export function AppLayout({ children, activePage, userRole = "candidato", userNa
 
   const links = isCandidato ? candidatoLinks : tutorLinks;
 
-  const initials = userName
+  const initials = displayUserName
     .split(" ")
     .map((n) => n[0])
     .join("")
     .substring(0, 2)
     .toUpperCase();
+
+  const handleLogout = () => {
+    logout();
+    setLocation("/login");
+  };
 
   return (
     <div className="flex h-screen w-full bg-[#F8FAFC] dark:bg-slate-900 overflow-hidden text-[#1E293B] dark:text-slate-100 font-sans">
@@ -103,18 +112,25 @@ export function AppLayout({ children, activePage, userRole = "candidato", userNa
           <h2 className="text-xl font-bold text-[#1E293B] dark:text-slate-100">{activePage}</h2>
           <div className="flex items-center gap-3">
             <ThemePicker />
-            <button className="relative text-[#64748B] dark:text-slate-400 hover:text-[#1E293B] dark:hover:text-slate-100 transition-colors">
+            <button className="relative text-[#64748B] dark:text-slate-400 hover:text-[#1E293B] dark:hover:text-slate-100 transition-colors mr-2">
               <Bell className="w-6 h-6" />
               <span className="absolute top-0 right-0 w-2.5 h-2.5 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></span>
             </button>
             <div className="flex items-center gap-3 border-l border-slate-200 dark:border-slate-700 pl-4">
               <div className="text-right hidden sm:block">
-                <div className="text-sm font-semibold text-[#1E293B] dark:text-slate-100">{userName}</div>
+                <div className="text-sm font-semibold text-[#1E293B] dark:text-slate-100">{displayUserName}</div>
                 <div className="text-xs text-[#64748B] dark:text-slate-400 capitalize">{userRole}</div>
               </div>
               <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-300 font-bold">
                 {initials}
               </div>
+              <button
+                onClick={handleLogout}
+                title="Cerrar sesión"
+                className="ml-2 p-2 text-slate-400 hover:text-red-500 dark:hover:text-red-400 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-xl transition-all"
+              >
+                <LogOut className="w-5 h-5" />
+              </button>
             </div>
           </div>
         </header>
