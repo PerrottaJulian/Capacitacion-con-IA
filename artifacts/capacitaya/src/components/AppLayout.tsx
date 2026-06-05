@@ -51,7 +51,10 @@ export function AppLayout({ children, activePage, userRole = "candidato", userNa
       <aside className="w-[240px] flex-shrink-0 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-700 flex flex-col justify-between shadow-sm z-10">
         <div>
           <div className="p-6">
-            <h1 className="text-2xl font-bold tracking-tight" style={{ color: "var(--cy-primary)" }}>CapacitaYa</h1>
+            <h1 className="text-2xl font-bold tracking-tight">
+              <span style={{ color: "var(--cy-primary)" }}>Capacit</span>
+              <span className="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">AR</span>
+            </h1>
           </div>
           <nav className="px-4 space-y-1">
             {links.map((link) => {

@@ -65,7 +65,7 @@ export function Login() {
             <GraduationCap className="w-9 h-9 text-white" />
           </div>
           <h1 className="text-3xl font-extrabold text-white tracking-tight flex items-center gap-2">
-            Capacita<span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Ya</span>
+            Capacit<span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">AR</span>
           </h1>
           <p className="text-slate-400 mt-2 text-sm text-center">
             Plataforma de capacitación inteligente basada en brechas de habilidades

@@ -41,7 +41,7 @@ export function AppLayout({ children, activePage, userRole = "candidato", userNa
       <aside className="w-[240px] flex-shrink-0 bg-white border-r border-slate-200 flex flex-col justify-between shadow-sm z-10">
         <div>
           <div className="p-6">
-            <h1 className="text-2xl font-bold text-[#4F46E5] tracking-tight">CapacitaYa</h1>
+            <h1 className="text-2xl font-bold text-[#4F46E5] tracking-tight">Capacit<span className="text-amber-500">AR</span></h1>
           </div>
           <nav className="px-4 space-y-1">
             {links.map((link) => {

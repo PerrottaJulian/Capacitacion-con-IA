@@ -113,16 +113,16 @@ En la era moderna, la transición al archivo digital es clave. Los objetivos pri
 * **Root / Principal**:
   * \`01_Finanzas\`
   * \`02_Proyectos\`
-    * \`2026_CapacitaYa\`
+    * \`2026_CapacitAR\`
       * \`01_Entregables\`
       * \`02_Minutas\`
   * \`03_Legal\``,
           estimated_minutes: 50,
           exercises: [
             {
-              prompt: "¿Cuál es el mejor nombre para la versión final del contrato de CapacitaYa firmado hoy (21 de mayo de 2026)?",
+              prompt: "¿Cuál es el mejor nombre para la versión final del contrato de CapacitAR firmado hoy (21 de mayo de 2026)?",
               type: "multiple_choice",
-              expected_answer: "2026-05-21_Contrato_CapacitaYa_Firmado_V1.0.pdf",
+              expected_answer: "2026-05-21_Contrato_CapacitAR_Firmado_V1.0.pdf",
               difficulty: 2
             }
           ]
